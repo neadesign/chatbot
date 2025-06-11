@@ -1,0 +1,6 @@
+[
+  {
+    "text": "La colazione viene consegnata tra le 8:00 e le 10:30.",
+    "embedding": [0.123, 0.456, ...]  // da generare
+  }
+]
