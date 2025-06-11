@@ -63,7 +63,10 @@ app.post('/chat', async (req, res) => {
       });
       return res.json({ status: 'ok', reply: chatCompletion.choices[0].message.content });
     } else {
-      return res.json({ status: 'fallback' });
+      return res.json({
+  status: 'fallback',
+  reply: "Non ho trovato una risposta diretta nella knowledge base. Se vuoi, inserisci la tua email per ricevere una risposta personalizzata da Francesco."
+});
     }
   } catch (error) {
     console.error('Errore GPT/chat:', error);
