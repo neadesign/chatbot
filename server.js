@@ -24,6 +24,7 @@ function findBestMatch(userVector) {
   let bestScore = 0;
   let bestContext = null;
   for (const item of KNOWLEDGE_BASE) {
+    if (item.embedding.length !== userVector.length) continue;  // 👈 filtro sicuro
     const score = similarity(userVector, item.embedding);
     if (score > bestScore) {
       bestScore = score;
@@ -32,7 +33,6 @@ function findBestMatch(userVector) {
   }
   return { score: bestScore, context: bestContext };
 }
-
 // ✉️ Invio Telegram
 async function notifyFrancesco(msg, email, bookingId) {
   const text = `❗️Domanda senza match:\n"${msg}"\n📩 Email: ${email || '-'}\n📘 Booking ID: ${bookingId || '-'}`;
