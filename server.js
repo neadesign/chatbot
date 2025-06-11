@@ -23,14 +23,20 @@ const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 function findBestMatch(userVector) {
   let bestScore = 0;
   let bestContext = null;
+
   for (const item of KNOWLEDGE_BASE) {
-    if (item.embedding.length !== userVector.length) continue;  // 👈 filtro sicuro
+    if (item.embedding.length !== userVector.length) continue;
     const score = similarity(userVector, item.embedding);
+
+    // 🔍 DEBUG: stampa lo score e il testo abbreviato
+    console.log(`Score: ${score.toFixed(4)} | Text: ${item.text.slice(0, 80)}...`);
+
     if (score > bestScore) {
       bestScore = score;
       bestContext = item.text;
     }
   }
+
   return { score: bestScore, context: bestContext };
 }
 // ✉️ Invio Telegram
