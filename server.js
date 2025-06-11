@@ -15,7 +15,7 @@ const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN || 'TOKEN_DEL_TUO_BOT';
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '1654425542';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || 'sk-...';
 const KNOWLEDGE_BASE = require('./knowledge_base.json');
-const MATCH_THRESHOLD = 0.75;
+const MATCH_THRESHOLD = 0.85;
 
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
