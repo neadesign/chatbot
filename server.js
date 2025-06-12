@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN || 'TOKEN_DEL_TUO_BOT';
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '1654425542';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || 'sk-...';
-const KNOWLEDGE_PATH = './knowledge/Neaspace_Knowledge_ONLY001.txt';
+const KNOWLEDGE_PATH = './Neaspace_Knowledge_ONLY001.txt';
 
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
