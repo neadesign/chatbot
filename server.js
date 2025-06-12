@@ -17,7 +17,7 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '1654425542';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || 'sk-...';
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
-const KNOWLEDGE_DIR = './knowledge';
+const KNOWLEDGE_DIR = '.';
 const DEFAULT_KNOWLEDGE = 'default.txt';
 
 // ✉️ Telegram
