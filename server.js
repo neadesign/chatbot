@@ -84,7 +84,15 @@ function detectTopic(msg) {
       'spiaggia', 'mare', 'bagno', 'costume', 'ombrellone', 'sabbia', 'teli', 'crema solare', 'nuotare', 'lido', 'scogli', 'acqua', 'spiagge vicine', 'accesso mare', 'tuffarsi', 'spiaggia libera', 'piedi in acqua', 'dove andare al mare', 'stabilimento', 'bagnino',
       'beach', 'sea', 'swim', 'sunbed', 'umbrella', 'sand', 'towel', 'sunscreen', 'swimming', 'shore', 'beach nearby', 'access to sea', 'free beach', 'cliff', 'beach club', 'lifeguard', 'coast', 'bay', 'waves', 'sunbathing',
       'plage', 'mer', 'baignade', 'parasol', 'sable', 'serviette', 'crème solaire', 'nager', 'accès mer', 'plage proche', 'plage libre', 'club plage', 'maître nageur', 'rochers', 'eau', 'tremper', 'côte', 'baie', 'vagues', 'bronzer'
-    ]
+    ],
+    famiglie: [
+  // Italiano
+  'bambini', 'famiglia', 'lettino', 'seggiolone', 'giochi', 'libri', 'sicurezza', 'baby', 'pappa', 'vaschetta', 'scalda biberon', 'culla', 'figli', 'genitori', 'parco giochi', 'adatto ai bimbi', 'famiglie', 'bimbo', 'serenità', 'tranquillità',
+  // Inglese
+  'children', 'family', 'crib', 'high chair', 'games', 'books', 'safety', 'baby', 'feeding', 'bathtub', 'bottle warmer', 'cot', 'kids', 'parents', 'playground', 'child friendly', 'quiet', 'calm', 'peaceful', 'infant',
+  // Francese
+  'enfants', 'famille', 'lit bébé', 'chaise haute', 'jouets', 'livres', 'sécurité', 'bébé', 'repas', 'bain', 'chauffe-biberon', 'berceau', 'parents', 'parc', 'enfant', 'calme', 'sérénité', 'tranquille', 'convivial', 'adapté enfants'
+]
 
     // Altre macroaree possono seguire lo stesso schema...
   };
