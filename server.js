@@ -156,7 +156,13 @@ ${knowledgeText}
 
     const reply = chatCompletion.choices[0].message.content.trim();
 
-    if (/non lo so|ti metto in contatto|non posso|non posso fornire|non è disponibile|non siamo sicuri/i.test(reply.toLowerCase())) {
+    if (
+  reply.toLowerCase().includes('non lo so') ||
+  reply.toLowerCase().includes('ti metto in contatto') ||
+  reply.toLowerCase().includes('non posso') ||
+  reply.toLowerCase().includes('non è disponibile') ||
+  reply.toLowerCase().includes('non siamo sicuri')
+) {
       return res.json({
         status: 'fallback',
         reply: "Non ho trovato una risposta certa. Se vuoi, inserisci la tua email per ricevere assistenza diretta dal team Neaspace."
