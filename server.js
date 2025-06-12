@@ -60,11 +60,6 @@ function detectTopic(msg) {
       'restaurant', 'eat', 'where to eat', 'food', 'lunch', 'dinner', 'menu', 'cuisine', 'local food', 'typical dishes', 'places to eat', 'reservation', 'nearby', 'close restaurant', 'affordable', 'romantic', 'pizza', 'gastro', 'bistro', 'dining',
       'restaurant', 'manger', 'où manger', 'nourriture', 'déjeuner', 'dîner', 'menu', 'cuisine', 'plats typiques', 'gastronomie', 'trattoria', 'réserver', 'restaurant proche', 'pizza', 'bistrot', 'gastronomique', 'restaurant local', 'restaurant économique', 'restaurant romantique', 'dîner dehors'
     ]    ,
-    spiagge: [
-      'spiaggia', 'mare', 'bagno', 'costume', 'ombrellone', 'sabbia', 'teli', 'crema solare', 'nuotare', 'lido', 'scogli', 'acqua', 'spiagge vicine', 'accesso mare', 'tuffarsi', 'spiaggia libera', 'piedi in acqua', 'dove andare al mare', 'stabilimento', 'bagnino',
-      'beach', 'sea', 'swim', 'sunbed', 'umbrella', 'sand', 'towel', 'sunscreen', 'swimming', 'shore', 'beach nearby', 'access to sea', 'free beach', 'cliff', 'beach club', 'lifeguard', 'coast', 'bay', 'waves', 'sunbathing',
-      'plage', 'mer', 'baignade', 'parasol', 'sable', 'serviette', 'crème solaire', 'nager', 'accès mer', 'plage proche', 'plage libre', 'club plage', 'maître nageur', 'rochers', 'eau', 'tremper', 'côte', 'baie', 'vagues', 'bronzer'
-    ],
     aria_condizionata: [
       'aria condizionata', 'condizionatore', 'caldo', 'freddo', 'regolare aria', 'temperatura', 'clima', 'acceso', 'spento', 'ventilazione', 'ac', 'climatizzatore', 'aria fresca', 'modalità', 'impostazioni', 'remote', 'ventola', 'calorifero', 'estate', 'comfort',
       'air conditioning', 'ac', 'hot', 'cold', 'adjust air', 'temperature', 'climate', 'on', 'off', 'fan', 'air flow', 'cool', 'heat', 'settings', 'remote control', 'ventilation', 'warm', 'summer', 'air unit', 'air system',
@@ -89,26 +84,6 @@ function detectTopic(msg) {
       'spiaggia', 'mare', 'bagno', 'costume', 'ombrellone', 'sabbia', 'teli', 'crema solare', 'nuotare', 'lido', 'scogli', 'acqua', 'spiagge vicine', 'accesso mare', 'tuffarsi', 'spiaggia libera', 'piedi in acqua', 'dove andare al mare', 'stabilimento', 'bagnino',
       'beach', 'sea', 'swim', 'sunbed', 'umbrella', 'sand', 'towel', 'sunscreen', 'swimming', 'shore', 'beach nearby', 'access to sea', 'free beach', 'cliff', 'beach club', 'lifeguard', 'coast', 'bay', 'waves', 'sunbathing',
       'plage', 'mer', 'baignade', 'parasol', 'sable', 'serviette', 'crème solaire', 'nager', 'accès mer', 'plage proche', 'plage libre', 'club plage', 'maître nageur', 'rochers', 'eau', 'tremper', 'côte', 'baie', 'vagues', 'bronzer'
-    ],
-    aria_condizionata: [
-      'aria condizionata', 'condizionatore', 'caldo', 'freddo', 'regolare aria', 'temperatura', 'clima', 'acceso', 'spento', 'ventilazione', 'ac', 'climatizzatore', 'aria fresca', 'modalità', 'impostazioni', 'remote', 'ventola', 'calorifero', 'estate', 'comfort',
-      'air conditioning', 'ac', 'hot', 'cold', 'adjust air', 'temperature', 'climate', 'on', 'off', 'fan', 'air flow', 'cool', 'heat', 'settings', 'remote control', 'ventilation', 'warm', 'summer', 'air unit', 'air system',
-      'climatisation', 'chaud', 'froid', 'air', 'température', 'climatiseur', 'ventilation', 'marche', 'arrêt', 'réglage', 'télécommande', 'soufflerie', 'air frais', 'mode', 'chauffage', 'été', 'confort', 'flux d’air', 'système', 'appareil'
-    ],
-    wifi: [
-      'wifi', 'internet', 'rete', 'password', 'connessione', 'lenta', 'non funziona', 'accedere', 'modem', 'router', 'velocità', 'online', 'navigare', 'accesso internet', 'cavo', 'wireless', 'problemi wifi', 'connessione persa', 'campo', 'linea',
-      'wifi', 'internet', 'network', 'password', 'connection', 'slow', 'not working', 'access', 'modem', 'router', 'speed', 'online', 'browse', 'internet access', 'cable', 'wireless', 'signal', 'disconnected', 'coverage', 'line',
-      'wifi', 'internet', 'réseau', 'mot de passe', 'connexion', 'lent', 'ne fonctionne pas', 'accès', 'modem', 'routeur', 'vitesse', 'en ligne', 'naviguer', 'accès internet', 'câble', 'sans fil', 'signal', 'hors ligne', 'zone de couverture', 'ligne'
-    ],
-    problemi: [
-      'problema', 'non funziona', 'difetto', 'guasto', 'rottura', 'bloccato', 'rumore', 'perdita', 'malfunzionamento', 'disguido', 'lamentela', 'pulizia', 'mancanza', 'non va', 'non parte', 'interruzione', 'muffa', 'odore', 'ragnatele', 'rovinato',
-      'problem', 'not working', 'issue', 'broken', 'error', 'malfunction', 'stuck', 'noise', 'leak', 'complaint', 'dirty', 'missing', 'fail', 'stop', 'damage', 'glitch', 'out of order', 'smell', 'defect', 'unusable',
-      'problème', 'ne fonctionne pas', 'défaut', 'panne', 'cassé', 'bloqué', 'bruit', 'fuite', 'erreur', 'saleté', 'absence', 'odeur', 'interruption', 'arrêt', 'mauvais état', 'inutilisable', 'souci', 'anomalie', 'plainte', 'malpropreté'
-    ],
-    altro: [
-      'informazione', 'aiuto', 'curiosità', 'domanda', 'servizio', 'extra', 'chiedere', 'sapere', 'dubbi', 'richiesta', 'assistenza', 'altro', 'necessità', 'prenotazione', 'offerte', 'cose da fare', 'consigli', 'tour', 'domandare', 'convenzioni',
-      'info', 'question', 'help', 'support', 'inquiry', 'other', 'ask', 'know', 'doubt', 'request', 'assistance', 'extra service', 'booking', 'offers', 'things to do', 'tips', 'recommendations', 'activities', 'guide', 'information',
-      'info', 'question', 'aide', 'soutien', 'demande', 'autre', 'demander', 'savoir', 'doute', 'requête', 'assistance', 'service', 'réservation', 'offres', 'activités', 'choses à faire', 'suggestions', 'guide', 'informations', 'curiosité'
     ]
 
     // Altre macroaree possono seguire lo stesso schema...
