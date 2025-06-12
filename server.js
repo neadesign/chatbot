@@ -34,8 +34,7 @@ app.post('/chat', async (req, res) => {
     const knowledgeText = fs.readFileSync(KNOWLEDGE_PATH, 'utf8');
 
     const systemPrompt = `
-Rispondi come se fossi il team Neaspace. Usa solo le informazioni contenute nel seguente testo.
-Se non trovi la risposta in modo sicuro, scrivi: "Non lo so con certezza. Ti metto in contatto con il team Neaspace."
+Rispondi solo usando le informazioni seguenti. Se anche solo in parte non sei sicuro, NON rispondere. Scrivi: “Non lo so con certezza. Ti metto in contatto con il team Neaspace.”
 
 Ecco la knowledge base:
 ${knowledgeText}
@@ -52,21 +51,21 @@ ${knowledgeText}
 
     const reply = chatCompletion.choices[0].message.content.trim();
 
-    // Se GPT dice di non sapere, attiva fallback
-    if (reply.toLowerCase().includes('non lo so') || reply.toLowerCase().includes('ti metto in contatto')) {
-      return res.json({
-        status: 'fallback',
-        reply: "Non ho trovato una risposta certa. Se vuoi, inserisci la tua email per ricevere assistenza diretta dal team Neaspace."
-      });
-    }
+// Se GPT esprime incertezza o evasività, attiva il fallback
+if (
+  reply.toLowerCase().includes('non lo so') ||
+  reply.toLowerCase().includes('ti metto in contatto') ||
+  reply.toLowerCase().includes('non posso') ||
+  reply.toLowerCase().includes('non posso fornire') ||
+  reply.toLowerCase().includes('non è disponibile') ||
+  reply.toLowerCase().includes('non siamo sicuri')
+) {
+  return res.json({
+    status: 'fallback',
+    reply: "Non ho trovato una risposta certa. Se vuoi, inserisci la tua email per ricevere assistenza diretta dal team Neaspace."
+  });
+}
 
-    return res.json({ status: 'ok', reply });
-
-  } catch (error) {
-    console.error('Errore GPT/chat:', error);
-    return res.status(500).json({ status: 'error', message: 'Errore interno GPT.' });
-  }
-});
 
 // 📩 Endpoint fallback: /fallback
 app.post('/fallback', async (req, res) => {
