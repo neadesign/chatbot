@@ -51,22 +51,28 @@ ${knowledgeText}
 
     const reply = chatCompletion.choices[0].message.content.trim();
 
-// Se GPT esprime incertezza o evasività, attiva il fallback
-if (
-  reply.toLowerCase().includes('non lo so') ||
-  reply.toLowerCase().includes('ti metto in contatto') ||
-  reply.toLowerCase().includes('non posso') ||
-  reply.toLowerCase().includes('non posso fornire') ||
-  reply.toLowerCase().includes('non è disponibile') ||
-  reply.toLowerCase().includes('non siamo sicuri')
-) {
-      return res.json({ status: 'ok', reply });
+    // Se GPT esprime incertezza o evasività, attiva il fallback
+    if (
+      reply.toLowerCase().includes('non lo so') ||
+      reply.toLowerCase().includes('ti metto in contatto') ||
+      reply.toLowerCase().includes('non posso') ||
+      reply.toLowerCase().includes('non posso fornire') ||
+      reply.toLowerCase().includes('non è disponibile') ||
+      reply.toLowerCase().includes('non siamo sicuri')
+    ) {
+      return res.json({
+        status: 'fallback',
+        reply: "Non ho trovato una risposta certa. Se vuoi, inserisci la tua email per ricevere assistenza diretta dal team Neaspace."
+      });
+    }
+
+    return res.json({ status: 'ok', reply });
 
   } catch (error) {
     console.error('Errore GPT/chat:', error);
     return res.status(500).json({ status: 'error', message: 'Errore interno GPT.' });
   }
-}); // <== QUESTA GRAFFA MANCAVA!
+});
 
 // 📩 Endpoint fallback: /fallback
 app.post('/fallback', async (req, res) => {
