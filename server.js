@@ -139,7 +139,7 @@ app.post('/chat', async (req, res) => {
       : fs.readFileSync(path.join(KNOWLEDGE_DIR, DEFAULT_KNOWLEDGE), 'utf8');
 
     const systemPrompt = `
-Rispondi solo usando le informazioni seguenti. Se anche solo in parte non sei sicuro, NON rispondere. Scrivi: “Non lo so con certezza. Ti metto in contatto con il team Neaspace.”
+Rispondi solo usando le informazioni seguenti. Se anche solo in parte non sei sicuro, NON rispondere. Scrivi: “Non lo so con certezza. Ti metto in contatto con il team Neaspace. Rispondi nella stessa lingua della domanda dell’utente.”
 
 Ecco la knowledge base:
 ${knowledgeText}
